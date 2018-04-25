@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
-import img from './name.png'
 import pokeData from './pokemon.json'
+import tit1 from './othername.svg'
 
+ 
 class App extends Component {
   constructor() {
     super()
@@ -49,8 +50,15 @@ class App extends Component {
             } else {
               console.log('No Data')
             }
-          }
+        } else if (this.state.weight !== '') {
+          if (this.state.pokemon[i].weight === parseInt(this.state.weight)) {
+            console.log(this.state.pokemon[i].weight)
+            pokemon.push(this.state.pokemon[i])
+            } else {
+              console.log('No Data')
+            }
         }
+      }
         this.setState({matchingPokemon: pokemon})
     })
     // axios.get(`http://localhost:3001/`)
@@ -93,7 +101,7 @@ class App extends Component {
     return (
       <div className="app">
         <h1 className="header">
-          <img src={`${img}`} alt="Pokemans" className="head" />
+          <img src={`${tit1}`} alt="Pokemans" className="head" />
         </h1>
         <div className="header">
           <form onSubmit={this.handleSubmit}>

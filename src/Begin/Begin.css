@@ -1,0 +1,142 @@
+.begin {
+   text-align: center;
+   margin-top: 15%;
+}
+.pokedex-container {
+   margin: 0 auto;
+   border: 1px solid black;
+   width: 530px;
+   padding: 1px;
+   border-radius: 40px;
+}
+
+.text-container {
+   border: 3px solid black;
+   width: 480px;
+   border-radius: 20px;
+   padding: 50px;
+   margin: 0 auto;
+   margin-bottom: 30px;
+}
+.start-text {
+   font-size: 30px;
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+   animation: typing 1s steps(8, end);
+ }
+
+ /* The typing effect */
+ @keyframes typing {
+   from { width: 0 }
+   to { width: 430px }
+ }
+
+/* top half pokedex */
+.pokedex-top {
+   height: 250px;
+   width: 500px;
+   background: #B3292C;
+   border-top: 10px solid white;
+   border-left: 15px solid #CB5E69;
+   border-right: 15px solid #811C1F;
+   border-bottom: 10px solid white;
+   border-radius: 40px 40px 0 0;
+}
+.circle-top { 
+   position: relative;
+   width: 330px;
+   height: 150px; 
+   top: 50%;
+   left: 15%;
+   border-radius: 1500px 1500px 0 0;
+   border: 10px solid white;
+   background: #272624;
+   z-index: 1;
+}
+
+/* screen of pokedex */
+.pokedex-middle {
+   height: 100px;
+   width: 515px;
+   margin-left: 5px;
+   border-left: 3px solid #89BEBA;
+   border-right: 3px solid #89BEBA;
+   background: #D7E9EB;
+   position: relative;
+   z-index: 3;
+   box-shadow: 4px 10px 20px rgba(223,223,223, 0.5);
+}
+.circle {
+   height: 200px;
+   width: 200px;
+   position: relative;
+   border-radius: 120px;
+   top: -45%;
+   left: 29%;
+   background: #C0EAF0;
+   border: 10px solid #DBECF3;
+   z-index: 6;
+   box-shadow: 0 10px 20px rgba(223,223,223, 0.5);
+}
+.circle:after {
+   animation: pulse 5s infinite;
+   content: '';
+   position: absolute;
+   top: 20%;
+   left: 20%;
+   height: 100px;
+   width: 100px;
+   background: #D7E9EB;
+   border: 10px solid #DFEAED;
+   border-radius: 60px;
+ }
+ @keyframes pulse {
+   0% {
+     background-color: white;
+     box-shadow: 0 0 0 18px white;
+     border-radius: 100px;
+   }
+   25% {
+     background-color: #C0EAF0;
+     box-shadow: 0 0 0 18px white;
+     border-radius: 100px;
+   }
+   50% {
+      background-color: white;
+      box-shadow: 0 0 0 18px white;
+      border-radius: 100px;
+    }
+    75% {
+      background-color: #C0EAF0;
+      box-shadow: 0 0 0 18px white;
+      border-radius: 100px;
+    }
+    100% {
+      background-color: white;
+      box-shadow: 0 0 0 18px white;
+      border-radius: 100px;
+    }
+ }
+
+/* bottom half pokedex */
+.pokedex-bottom {
+   height: 250px;
+   width: 500px;
+   background: #B3292C;
+   border-left: 15px solid #CB5E69;
+   border-right: 15px solid #811C1F;
+   border-bottom: 10px solid #811C1F;
+   border-top: 10px solid white;
+   border-radius: 0 0 40px 40px;
+}
+.circle-bottom { 
+   position: relative;
+   width: 330px;
+   height: 150px; 
+   top: -10%;
+   left: 15%;
+   border-radius: 0 0 1500px 1500px;
+   border: 10px solid white;
+   background: #272624;
+}

@@ -9,7 +9,7 @@
 }
 .head {
   margin: 0 auto;
-  height: 120px;
+  height: 80px;
 }
 .header {
   margin-top: 50px;
@@ -36,41 +36,44 @@
 .weight-form {
   margin-bottom: 40px;
 }
-.element-container {
+
+
+
+
+
+
+
+
+
+/* Pokeball */
+/* .element-container {
   display: flex;
 }
-
-
 .pokeball {
   margin-left: 100px;
-  width: 200px;
-  border: 3px solid black;
+  width: 195px;
+  border: 5px solid black;
   border-radius: 50%;
 }
 .red {
-  height: 95px;
-  width: 193px;
+  height: 90px;
+  width: 190px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-  border-top: 3px solid black;
-  border-left:  3px solid black;
-  border-right:  3px solid black;
+  border: 3px solid black;
   border-bottom: 5px solid black;
   background: red;
   z-index: -1;
-
 }
 .white {
-  height: 95px;
-  width: 193px;
-  margin-top: -25px;
+  height: 90px;
+  width: 190px;
+  margin-top: -15px;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   background: white;
+  border:  3px solid black;
   border-top: 5px solid black;
-  border-left:  3px solid black;
-  border-right:  3px solid black;
-  border-bottom: 3px solid black;
   z-index: -1;
 }
 .element {
@@ -78,7 +81,7 @@
   height: 30px;
   width: 30px;
   margin-left: 85px;
-  margin-top: -10px;
+  margin-top: -8px;
   border: 1px black solid;
   position: relative;
 }
@@ -94,13 +97,8 @@
   background: none;
   border: 10px solid black;
   border-radius: 50px;
-  /* z-index: -1; */
 }
 
-/* .element:hover {
-  width: 20px;
-  height: 20px;
-} */
 @keyframes pulse {
   100% {
     background-color: white;
@@ -117,21 +115,6 @@
 .pokeball:hover {
   animation: pokeball-spin infinite 1s linear; 
 }
-/* 
-@keyframes pokeball-spin {
-  0% { transform: translate(10px, 11px) }
-  10% { transform: translate(-1px, -2px)  }
-  20% { transform: translate(-3px, 0px) }
-  30% { transform: translate(3px, 2px) }
-  40% { transform: translate(1px, -1px) }
-  50% { transform: translate(-1px, 2px)  }
-  60% { transform: translate(-3px, 1px) }
-  70% { transform: translate(3px, 1px)  }
-  80% { transform: translate(-1px, -1px) }
-  90% { transform: translate(1px, 2px) }
-  100% { transform: translate(1px, -2px)  }
-} */
-
 
 @keyframes pokeball-spin {
   0%{ transform: rotate(0deg) }
@@ -146,4 +129,4 @@
   90%{ transform: rotate(0deg) }
   95%{ transform: rotate(20deg) }
   100% { transform: rotate(-20deg) }
-}
+} */
