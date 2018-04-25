@@ -3,7 +3,7 @@
   text-align: center;
   width: 250px;
   border: 3px solid red;
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 8px 10px;
   margin: 1px;
 }
@@ -20,11 +20,11 @@
   font-weight: bolder;
   font-size: 30px;
   margin: 0 auto;
-  padding-top: 15px;
+  padding-top: 20px;
 }
 
 .img {
-  width: 150px;
+  width: 200px;
 }
 .weight {
   margin: 0 auto;
@@ -35,4 +35,115 @@
 }
 .weight-form {
   margin-bottom: 40px;
+}
+.element-container {
+  display: flex;
+}
+
+
+.pokeball {
+  margin-left: 100px;
+  width: 200px;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+.red {
+  height: 95px;
+  width: 193px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-top: 3px solid black;
+  border-left:  3px solid black;
+  border-right:  3px solid black;
+  border-bottom: 5px solid black;
+  background: red;
+  z-index: -1;
+
+}
+.white {
+  height: 95px;
+  width: 193px;
+  margin-top: -25px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background: white;
+  border-top: 5px solid black;
+  border-left:  3px solid black;
+  border-right:  3px solid black;
+  border-bottom: 3px solid black;
+  z-index: -1;
+}
+.element {
+  animation: pulse 0.5s infinite;
+  height: 30px;
+  width: 30px;
+  margin-left: 85px;
+  margin-top: -10px;
+  border: 1px black solid;
+  position: relative;
+}
+.element:after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: 10px solid black;
+  border-radius: 50px;
+  /* z-index: -1; */
+}
+
+/* .element:hover {
+  width: 20px;
+  height: 20px;
+} */
+@keyframes pulse {
+  100% {
+    background-color: white;
+    box-shadow: 0 0 0 18px white;
+    border-radius: 100px;
+  }
+  0% {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 0 18px white;
+    border-radius: 210px;
+  }
+}
+
+.pokeball:hover {
+  animation: pokeball-spin infinite 1s linear; 
+}
+/* 
+@keyframes pokeball-spin {
+  0% { transform: translate(10px, 11px) }
+  10% { transform: translate(-1px, -2px)  }
+  20% { transform: translate(-3px, 0px) }
+  30% { transform: translate(3px, 2px) }
+  40% { transform: translate(1px, -1px) }
+  50% { transform: translate(-1px, 2px)  }
+  60% { transform: translate(-3px, 1px) }
+  70% { transform: translate(3px, 1px)  }
+  80% { transform: translate(-1px, -1px) }
+  90% { transform: translate(1px, 2px) }
+  100% { transform: translate(1px, -2px)  }
+} */
+
+
+@keyframes pokeball-spin {
+  0%{ transform: rotate(0deg) }
+  10% { transform: rotate(20deg) }
+  20% { transform: rotate(-20deg) }
+  30%{ transform: rotate(0deg) }
+  40% { transform: rotate(20deg) }
+  50% { transform: rotate(-20deg) }
+  60%{ transform: rotate(0deg) }
+  70% { transform: rotate(20deg) }
+  80% { transform: rotate(-20deg) }
+  90%{ transform: rotate(0deg) }
+  95%{ transform: rotate(20deg) }
+  100% { transform: rotate(-20deg) }
 }

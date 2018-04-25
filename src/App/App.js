@@ -98,7 +98,12 @@ class App extends Component {
               value="Submit"
               onClick={this.handleSubmitWeight} />
           </form>
-
+<div className="pokeball">
+            <div className="red"/>
+            <div className="element"/>
+            <div className="white"/>
+            </div>
+          
           <div>{pokemon}</div>
         </div>
       </div>
