@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
 import img from './name.png'
+import pokeData from './pokemon.json'
 
 class App extends Component {
   constructor() {
@@ -9,7 +10,8 @@ class App extends Component {
     this.state = {
       height: '',
       weight: '',
-      pokemon: []
+      pokemon: [],
+      matchingPokemon: []
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleSubmitWeight = this.handleSubmitWeight.bind(this)
@@ -18,9 +20,10 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    // pokemon height in cm
     let feet = this.refs.feet.value * 12
     let inches = this.refs.inches.value * 1
-    let meters = (feet + inches) * 0.254
+    let meters = (feet + inches) * 2.54
     console.log(Math.round(meters))
     this.setState({ height: Math.round(meters) }, this.componentDidMount)
   }
@@ -34,32 +37,48 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3001/`)
-      .then(res => {
-        let pokemon = []
-        for (var i = 0; i < 750; i++) {
-          if (this.state.height !== '') {
-            if (res.data[i].height === parseInt(this.state.height)) {
-              console.log(res.data[i].height)
-              pokemon.push(res.data[i])
-            } else {
-              console.log('No Data')
-            }
-          } else if (this.state.weight !== '') {
-            if (res.data[i].weight === parseInt(this.state.weight)) {
-              pokemon.push(res.data[i])
+    console.log(pokeData)
+    this.setState({pokemon: pokeData}, () => {
+      console.log(this.state.pokemon)
+      let pokemon = []
+      for (var i = 0; i < this.state.pokemon.length; i++) {
+        if (this.state.height !== '') {
+          if (this.state.pokemon[i].height === parseInt(this.state.height)) {
+            console.log(this.state.pokemon[i].height)
+            pokemon.push(this.state.pokemon[i])
             } else {
               console.log('No Data')
             }
           }
         }
-        this.setState({ pokemon: pokemon })
-      })
-      .catch(err => console.log(err))
+        this.setState({matchingPokemon: pokemon})
+    })
+    // axios.get(`http://localhost:3001/`)
+    //   .then(res => {
+    //     let pokemon = []
+    //     for (var i = 0; i < 750; i++) {
+    //       if (this.state.height !== '') {
+    //         if (res.data[i].height === parseInt(this.state.height)) {
+    //           console.log(res.data[i].height)
+    //           pokemon.push(res.data[i])
+    //         } else {
+    //           console.log('No Data')
+    //         }
+    //       } else if (this.state.weight !== '') {
+    //         if (res.data[i].weight === parseInt(this.state.weight)) {
+    //           pokemon.push(res.data[i])
+    //         } else {
+    //           console.log('No Data')
+    //         }
+    //       }
+    //     }
+    //     this.setState({ pokemon: pokemon })
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   render() {
-    let pokemon = this.state.pokemon.map((pokemon, i) => {
+    let pokemon = this.state.matchingPokemon.map((pokemon, i) => {
       console.log(pokemon)
       return (
         <div className="pokemon-list" key={i}>
